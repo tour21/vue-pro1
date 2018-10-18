@@ -1,6 +1,5 @@
 <template>
-  <div id="app">
-    <img src="">
+  <div class="app-container" id="app">
     <mt-header fixed title="黑马程序员"></mt-header>
 
     <nav class="mui-bar mui-bar-tab">
@@ -21,7 +20,7 @@
 				<span class="mui-tab-label">搜索</span>
 			</router-link>
 		</nav>
-    <router-view/>
+   <h2>12</h2>
   </div>
 </template>
 
@@ -39,6 +38,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px; */
+}
+.app-container {
+	padding-top: 40px;
+	padding-bottom: 50px;
+	background-color: pink;
 }
 
 </style>
