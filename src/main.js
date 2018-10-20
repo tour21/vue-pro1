@@ -12,12 +12,17 @@ import './assets/mui/css/icons-extra.css'
 
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
+import moment from 'moment'
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
 
 Vue.use(MintUI)
 Vue.http.options.root = 'http://027xin.com:8899'
+
+Vue.filter('dateFormat', function (dateStr, pattern="YYYY-MM-DD HH:mm:ss") {
+  return moment(dateStr).format(pattern)
+})
 
 Vue.config.productionTip = false
 
