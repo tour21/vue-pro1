@@ -1,7 +1,9 @@
 <template>
   <div class="app-container" id="app">
     <mt-header fixed title="黑马程序员"></mt-header>
-
+	<transition>
+		<router-view></router-view>
+	</transition>
     <nav class="mui-bar mui-bar-tab">
 			<router-link class="mui-tab-item" to="/home">
 				<span class="mui-icon mui-icon-home"></span>
@@ -22,7 +24,7 @@
 				<span class="mui-tab-label">搜索</span>
 			</router-link>
 		</nav>
-   <h2>12</h2>
+   <!-- <h2>12</h2> -->
   </div>
 </template>
 
@@ -44,7 +46,20 @@ export default {
 .app-container {
 	padding-top: 40px;
 	padding-bottom: 50px;
-	background-color: pink;
+	/* background-color: pink; */
+	overflow-x: hidden;
+}
+.v-enter {
+	opacity: 0;
+	transform: translateX(100%);
+}
+.v-leave-to {
+	opacity: 0;
+	transform: translateX(-100%);
+	position: absolute;
+}
+.v-enter-active, .v-leave-active {
+	transition: all 0.5s ease;
 }
 
 </style>
