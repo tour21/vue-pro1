@@ -6,6 +6,7 @@ import MemberCon from '@/components/MemberCon'
 import ShopcarCon from '@/components/ShopcarCon'
 import SearchCon from '@/components/SearchCon'
 import NewList from '@/components/news/NewsList'
+import NewsInfo from '@/components/news/NewsInfo'
 
 
 Vue.use(Router)
@@ -17,6 +18,7 @@ export default new Router({
     { path: '/member', component:MemberCon},
     { path: '/shopcar', component:ShopcarCon},
     { path: '/search', component:SearchCon},
-    { path: '/home/newslist', component:NewList}
+    { path: '/home/newslist', component:NewList},
+    { path: '/home/newsinfo/:id', component:NewsInfo}
   ]
 })
