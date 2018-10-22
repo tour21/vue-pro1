@@ -7,12 +7,12 @@
         <mt-button type="primary" size="large">发表评论</mt-button>
 
         <div class="cmt-list">
-            <div class="cmt-item">
+            <div class="cmt-item" v-for="(item, i) in comments" :key="item.add_time">
                 <div class="cmt-title">
-                    第1楼&nbsp;&nbsp;用户:匿名用户&nbsp;&nbsp;发表时间:2018-10-18 10:10:10
+                    第{{i+1}}楼&nbsp;&nbsp;用户:{{item.user_name}}&nbsp;&nbsp;发表时间:{{item.add_time | dataFormat}}
                 </div>
                 <div class="cmt-body">
-                    123456
+                    {{item.content == 'undefined'? '此用户太懒': item.content}}
                 </div>
             </div>
         </div>   
@@ -21,7 +21,30 @@
 </template>
 
 <script>
-
+import {Toast} from "mint-ui"
+export default {
+    data() {
+        return {
+            pageIndex: 1,
+            comments: []
+        }
+    },
+    created() {
+        this.getComments()
+    },
+    methods: {
+        getComments() {
+            this.$http.get("api/getcomments/"+this.id+"?pageindex=" +this.pageIndex).then(result => {
+                if (result.body.status ==0) {
+                    this.comments = result.body.message
+                } else {
+                    Toast("获取评论失败！")
+                }
+            })
+        }
+    },
+    props: ["id"]
+}
 </script>
 
 <style lang="scss" scoped>
