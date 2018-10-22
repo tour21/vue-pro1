@@ -6,11 +6,15 @@
             <span>点击: {{newsinfo.click}}次</span>
         </p>
         <hr>
-        <div class="content" v-html="newsinfo.content"></div>        
+        <div class="content" v-html="newsinfo.content"></div>  
+
+        <comment-box></comment-box>      
     </div>
 </template>
 
 <script>
+import comment from '../subcomponents/comment.vue'
+
 export default {
     data() {
         return {
@@ -31,7 +35,10 @@ export default {
                 }
             })
         }
-    }
+    },
+    components: {
+    "comment-box":comment
+}
 }
 </script>
 
@@ -51,7 +58,7 @@ export default {
         justify-content: space-between;
     }
     .content {
-        img {
+       /deep/ img {
             width: 100%;
         }
     }
