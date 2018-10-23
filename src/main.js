@@ -19,6 +19,7 @@ Vue.use(VueResource)
 
 Vue.use(MintUI)
 Vue.http.options.root = 'http://027xin.com:8899'
+Vue.http.options.emulateJSON = true
 
 Vue.filter('dateFormat', function (dateStr, pattern="YYYY-MM-DD HH:mm:ss") {
   return moment(dateStr).format(pattern)

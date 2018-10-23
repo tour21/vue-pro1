@@ -7,6 +7,7 @@ import ShopcarCon from '@/components/ShopcarCon'
 import SearchCon from '@/components/SearchCon'
 import NewList from '@/components/news/NewsList'
 import NewsInfo from '@/components/news/NewsInfo'
+import photoList from '@/components/photos/photoList'
 
 
 Vue.use(Router)
@@ -19,6 +20,7 @@ export default new Router({
     { path: '/shopcar', component:ShopcarCon},
     { path: '/search', component:SearchCon},
     { path: '/home/newslist', component:NewList},
-    { path: '/home/newsinfo/:id', component:NewsInfo}
+    { path: '/home/newsinfo/:id', component:NewsInfo},
+    { path: '/home/photolist', component:photoList}
   ]
 })
