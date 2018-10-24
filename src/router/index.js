@@ -8,6 +8,7 @@ import SearchCon from '@/components/SearchCon'
 import NewList from '@/components/news/NewsList'
 import NewsInfo from '@/components/news/NewsInfo'
 import photoList from '@/components/photos/photoList'
+import GoodsList from '@/components/goods/GoodsList'
 
 
 Vue.use(Router)
@@ -21,6 +22,8 @@ export default new Router({
     { path: '/search', component:SearchCon},
     { path: '/home/newslist', component:NewList},
     { path: '/home/newsinfo/:id', component:NewsInfo},
-    { path: '/home/photolist', component:photoList}
+    { path: '/home/photolist', component:photoList},
+    { path: '/home/goodslist', component:GoodsList}
+
   ]
 })
