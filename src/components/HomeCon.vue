@@ -1,17 +1,12 @@
 <template>
     <div>
-        <mt-swipe :auto="4000">
+        <!-- <mt-swipe :auto="4000">
             <mt-swipe-item v-for="(item, index) in imageList" :key="index">
                 <img :src="item.img" alt="">
-            </mt-swipe-item>
+            </mt-swipe-item>       
+        </mt-swipe> -->
 
-            <!-- <mt-swipe-item>1</mt-swipe-item>
-            <mt-swipe-item>2</mt-swipe-item>
-            <mt-swipe-item>3</mt-swipe-item> -->
-        </mt-swipe>
-
-        <!-- <h3>HomeCon</h3> -->
-    
+        <swiper :lunbotu-list = 'imageList'></swiper>
     <ul class="mui-table-view mui-grid-view mui-grid-9">
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
             <router-link to="/home/newslist">
@@ -46,6 +41,7 @@
 </template>
 
 <script>
+import swiper from './subcomponents/swiper.vue'
     export default {
         data() {
             return {
@@ -54,7 +50,7 @@
         },
         created() {
             this.getLunbo()
-        },
+        },       
         methods: {
             getLunbo() {
                 this.$http.get("api/getLunbo").then(result => {
@@ -65,6 +61,9 @@
                     }
                 })
             }
+        },
+        components:{
+            swiper
         }
     }
 </script>

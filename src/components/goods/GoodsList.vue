@@ -1,7 +1,7 @@
 <template>
 <mt-loadmore :autoFill="false" :top-method="loadTop" :bottom-method="loadBottom" :bottom-all-loaded="allLoaded" ref="loadmore">
     <div class="goods-list" >
-        <div class="goods-item" v-for="(item, index) in goodslist" :key="index">
+        <div class="goods-item" v-for="(item, index) in goodslist" :key="index" @click="goDetail(item.id)">
             <img :src="item.img_url" alt="">
             <h1 class="title">{{item.title}}</h1>
             <div class="info">
@@ -31,6 +31,7 @@ export default {
     },
     created() {
         this.getGoodsList()
+        // this.goDetail()
     },
     methods: {
         getGoodsList() {
@@ -60,6 +61,9 @@ export default {
             console.log('上拉')
             this.pageindex++
             this.getGoodsList()
+        },
+        goDetail(id){
+            this.$router.push("/home/goodsinfo/"+ id)
         }     
     }
    
