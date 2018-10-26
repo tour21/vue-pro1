@@ -8,6 +8,7 @@ import SearchCon from '@/components/SearchCon'
 import NewList from '@/components/news/NewsList'
 import NewsInfo from '@/components/news/NewsInfo'
 import photoList from '@/components/photos/photoList'
+import photoInfo from '@/components/photos/photoInfo'
 import GoodsList from '@/components/goods/GoodsList'
 
 
@@ -23,6 +24,7 @@ export default new Router({
     { path: '/home/newslist', component:NewList},
     { path: '/home/newsinfo/:id', component:NewsInfo},
     { path: '/home/photolist', component:photoList},
+    { path: '/home/photoinfo/:id', component:photoInfo},
     { path: '/home/goodslist', component:GoodsList}
 
   ]

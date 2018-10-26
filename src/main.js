@@ -14,9 +14,14 @@ import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import moment from 'moment'
 
-import { Lazyload } from 'mint-ui';
+import { Lazyload } from 'mint-ui'
+import 'mint-ui/lib/style.css'
+
+import VuePreview from 'vue-preview'
+import './assets/global.css'
 
 Vue.use(Lazyload);
+Vue.use(VuePreview)
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
