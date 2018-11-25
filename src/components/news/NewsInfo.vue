@@ -40,6 +40,7 @@ export default {
     "comment-box":comment
 }
 }
+
 </script>
 
 <style lang="scss" scoped>
